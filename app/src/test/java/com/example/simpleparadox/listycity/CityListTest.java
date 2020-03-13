@@ -10,11 +10,15 @@ class CityListTest {
     private CityList mockCityList() {
         CityList cityList = new CityList();
         cityList.add(mockCity());
+        //cityList.add(testCity());
         return cityList;
     }
 
     private City mockCity() {
         return new City("Edmonton", "Alberta");
+    }
+    private City testCity()  {
+        return new City("Calgary", "Alberta");
     }
 
     @Test
@@ -93,16 +97,11 @@ class CityListTest {
 
         assertEquals(1, cityList.countCities());
     }
-    
+
     @Test
-    void testAdd2() {
+    void testHasCityTWO() {
         CityList cityList = mockCityList();
 
-        assertEquals(1, cityList.countCities());
-
-        cityList.add(new City("Regina", "Saskatchewan"));
-
-        assertEquals(2, cityList.countCities());
-        assertTrue(cityList.hasCity(new City("Edmonton", "Saskatchewan")));
+        assertTrue(cityList.hasCity(testCity()));
     }
 }
