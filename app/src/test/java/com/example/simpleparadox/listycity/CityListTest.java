@@ -10,7 +10,7 @@ class CityListTest {
     private CityList mockCityList() {
         CityList cityList = new CityList();
         cityList.add(mockCity());
-        //cityList.add(testCity());
+        cityList.add(testCity());
         return cityList;
     }
 
